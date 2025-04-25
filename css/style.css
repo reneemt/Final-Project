@@ -3,11 +3,66 @@
 =================== */
 :root {
   --pink: #FF8282;
-  --coral: #FF6363;
-  --mint: #BEE4D0;
-  --light-green: #DBFFCB;
-  --overlay-dark: rgba(0, 0, 0, 0.5);
+  --coral: #d50e43;
+  --mint: #BEE4D0; /* Light green for light mode */
+  --light-green: #e1fbe3;
+  --overlay-dark: rgba(5, 75, 70, 0.835);
 }
+
+/* Dark mode colors */
+
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #eee;
+}
+
+body.dark-mode nav {
+  background-color: #254b4c; /* Darker mint for better contrast */
+}
+
+body.dark-mode footer {
+  background-color: #254b4c; /* Match the darker mint */
+}
+
+/* Ensure all .box elements turn dark green in dark mode */
+body.dark-mode .box {
+  background-color: #254b4c; /* Darker green for boxes */
+  color: #eee; /* Ensure text color contrasts with the dark background */
+}
+
+/* Dark mode styles for all sections */
+body.dark-mode .hero {
+  background-color: #254b4c; /* Dark green for the hero section */
+  color: #eee; /* Ensure text is readable */
+}
+
+body.dark-mode .preview {
+  background-color: #254b4c; /* Dark green for the preview section */
+  color: #eee;
+}
+body.dark-mode .collections{
+  background-color: #254b4c; /* Dark green for the collections section */
+  color: #eee;
+}
+
+body.dark-mode .collections li{
+  background-color: #1a1a1a; /* Dark green for the collections section */
+  color: #eee;
+}
+
+/* Ensure links in dark mode are styled appropriately */
+body.dark-mode a {
+  color: #FFB6C1; /* Light pink for links */
+}
+
+body.dark-mode a:hover {
+  text-decoration: underline; /* Optional hover effect */
+}
+/* Target all h2 elements in dark mode */
+body.dark-mode h2 {
+  color: #FFB6C1; /* Light pink for headings */
+}
+
 
 /* ===================
    General Styles
@@ -18,11 +73,6 @@ body {
   background-color: white;
   color: black;
   transition: background-color 0.3s, color 0.3s;
-}
-
-body.dark-mode {
-  background-color: #1a1a1a;
-  color: #eee;
 }
 
 /* ===================
@@ -64,8 +114,8 @@ nav button#toggle-theme {
 =================== */
 .hero {
   position: relative;
-  height: 60vh;
-  background: url('../images/hero-background.jpg') center/cover no-repeat;
+  height: 40vh; /* Reduce the height to 40% of the viewport height */
+  background: url('../images/Banner.png') center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,6 +138,7 @@ nav button#toggle-theme {
   position: relative;
   z-index: 1;
   margin: 0.5em 0;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; 
 }
 
 /* ===================
@@ -112,7 +163,7 @@ section h2 {
 }
 
 a {
-  color: var(--pink);
+  color: var(--coral);
   font-weight: bold;
   text-decoration: none;
 }
@@ -120,6 +171,7 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
 
 /* ===================
    Collections Grid
@@ -153,12 +205,13 @@ a:hover {
 }
 
 /* ===================
-   Tab + Lightbox (unchanged)
+   Tab + Lightbox Gallery
 =================== */
 .tabs {
   display: flex;
   gap: 10px;
   margin: 20px;
+  justify-content: center;
 }
 
 .tab-button {
@@ -179,6 +232,7 @@ a:hover {
 .tab-content {
   display: none;
   padding: 20px;
+  text-align: center;
 }
 
 .tab-content.active {
@@ -186,7 +240,8 @@ a:hover {
 }
 
 .tab-content img {
-  max-width: 200px;
+  height: 250px; /* Standard preview height */
+  object-fit: cover;
   border-radius: 10px;
   margin: 10px;
   cursor: pointer;
@@ -203,11 +258,12 @@ a:hover {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.9);
   display: none;
   justify-content: center;
   align-items: center;
   z-index: 999;
+  padding: 20px;
 }
 
 .lightbox.active {
@@ -216,21 +272,26 @@ a:hover {
 
 .lightbox-content {
   position: relative;
-  max-width: 80vw;
-  max-height: 80vh;
-  text-align: center;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .lightbox-content img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 90vw;
+  max-height: 80vh;
   border-radius: 10px;
 }
 
 .close-lightbox {
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: 20px;
+  right: 20px;
   background-color: white;
   border: none;
   border-radius: 50%;
@@ -238,4 +299,31 @@ a:hover {
   height: 30px;
   cursor: pointer;
   font-size: 1.5rem;
+}
+
+/* Grid layout for the first two sections */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 20px; /* Space between the columns */
+  margin: 20px auto;
+  max-width: 1200px; /* Optional: Limit the width of the grid */
+}
+
+.main-grid .box {
+  padding: 20px;
+  background-color: var(--light-green); /* Adjust as needed */
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Center the footer */
+/* Center the H1 element */
+h1 {
+  text-align: center;
+  margin: 0 auto;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--mint); /* Optional: Adjust background color */
 }
