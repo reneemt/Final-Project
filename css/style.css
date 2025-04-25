@@ -316,6 +316,22 @@ a:hover {
   border-radius: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Ensure sections dynamically adjust height only on the About Me page */
+.about-page .box {
+  display: block; /* Remove flexbox to allow dynamic height */
+  padding: 20px;
+  background-color: var(--light-green); /* Optional: Adjust background color */
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-page .box img {
+  border-radius: 10px;
+  display: block; /* Ensure the image doesn't add extra space */
+  margin: 0 auto; /* Center the image horizontally */
+}
+
 /* Center the footer */
 /* Center the H1 element */
 h1 {
@@ -327,3 +343,4 @@ footer {
   padding: 20px;
   background-color: var(--mint); /* Optional: Adjust background color */
 }
+

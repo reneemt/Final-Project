@@ -8,29 +8,29 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header>
-    <nav>
+  <header role="banner">
+    <nav role="navigation" aria-label="Main Navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="about.html">About Me</a></li>
       </ul>
-      <button id="toggle-theme">Toggle Theme</button>
+      <button id="toggle-theme" aria-label="Toggle dark or light theme">Toggle Theme</button>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <h1>Welcome to My Digital Art World</h1>
+  <main role="main">
+    <section class="hero" aria-labelledby="hero-heading">
+      <h1 id="hero-heading">Welcome to My Digital Art World</h1>
       <p>Explore pieces from Michigan in Color, Studies, and Free for All</p>
     </section>
-    <section class="preview">
-      <h2>About Me</h2>
-      <p>I’m a digital artist who finds joy in color, storytelling, and exploration. Whether it’s a sketch study or a dreamy reimagination of Michigan, I make things that mean something to me — and maybe to you too.</p>
+    <section class="preview" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Me</h2>
+      <p>I'm a digital artist who finds joy in color, storytelling, and exploration. Whether it's a sketch study or a dreamy reimagination of Michigan, I make things that mean something to me — and maybe to you too.</p>
       <a href="about.html">Read more →</a>
     </section>
-    <section class="collections">
-      <h2>Explore My Collections</h2>
+    <section class="collections" aria-labelledby="collections-heading">
+      <h2 id="collections-heading">Explore My Collections</h2>
       <ul>
         <li><strong>Michigan in Color:</strong> Pieces I've made to supplement articles in the Michigan Daily's section "Michigan in Color", where articles reflect the artistry and perspective of people of color on campus</li>
         <li><strong>Studies:</strong> Digital sketches, anatomy, and color experiments</li>
@@ -40,7 +40,7 @@
     </section>
   </main>
 
-  <footer>
+  <footer role="contentinfo">
     <p>&copy; 2025 My Art Portfolio</p>
   </footer>
 

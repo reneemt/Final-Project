@@ -8,47 +8,45 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header>
-    <nav>
+  <header role="banner">
+    <nav role="navigation" aria-label="Main Navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="about.html">About Me</a></li>
       </ul>
-      <button id="toggle-theme">Toggle Theme</button>
+      <button id="toggle-theme" aria-label="Toggle dark or light theme">Toggle Theme</button>
     </nav>
   </header>
 
-  <main>
-    <h1>Gallery</h1>
-    <div class="tabs">
-        <button class="tab-button active" data-tab="michigan">Michigan in Color</button>
-        <button class="tab-button" data-tab="studies">Studies</button>
-        <button class="tab-button" data-tab="free">Free for All</button>
+  <main role="main">
+    <h1 id="gallery-heading">Gallery</h1>
+    <div class="tabs" role="tablist" aria-labelledby="gallery-heading">
+        <button class="tab-button active" data-tab="michigan" role="tab" aria-selected="true" aria-controls="michigan">Michigan in Color</button>
+        <button class="tab-button" data-tab="studies" role="tab" aria-selected="false" aria-controls="studies">Studies</button>
+        <button class="tab-button" data-tab="free" role="tab" aria-selected="false" aria-controls="free">Free for All</button>
     </div>
 
-    <div id="michigan" class="tab-content active">
+    <div id="michigan" class="tab-content active" role="tabpanel" aria-labelledby="tab-michigan">
         <img src="images/CandyStore.png" alt="Cover for the Mean Girl Archaetype and POC Women" tabindex="0" />
         <img src="images/Untitled_Artwork 10.png" alt="A cover about Warmth and Love" tabindex="0" />
         <img src="images/Procreate Artwork (3).png" alt="A couple Dancing in the Rain" tabindex="0" />
     </div>
 
-    <div id="studies" class="tab-content">
+    <div id="studies" class="tab-content" role="tabpanel" aria-labelledby="tab-studies" hidden>
         <img src="images/THOMAS_Sifting_Sand.png" alt="Anatomy sketch in blue tones" tabindex="0" />
         <img src="images/THOMAS_Wear_a_helmet.png" alt="Portrait study with dramatic lighting" tabindex="0" />
         <img src="images/THOMAS_Real_Eyes_Realize_Real_Lies <:3,.png" alt="Portrait study with dramatic lighting" tabindex="0" />
-
     </div>
 
-    <div id="free" class="tab-content">
+    <div id="free" class="tab-content" role="tabpanel" aria-labelledby="tab-free" hidden>
         <img src="images/THOMAS_JUMP!.png" alt="Copying over a pose and the colors with it" tabindex="0" />
         <img src="images/Untitled_Artwork_6.png" alt="Model Redr" tabindex="0" />
         <img src="images/SabCarp.png" alt="A study of a Sabrina Carptener concert photo" tabindex="0" />
     </div>
   </main>
 
-
-  <div id="lightbox" class="lightbox" aria-hidden="true">
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image Lightbox">
     <div class="lightbox-content">
       <button class="close-lightbox" aria-label="Close lightbox">&times;</button>
       <img id="lightbox-img" src="" alt="" />
@@ -56,7 +54,7 @@
     </div>
   </div>
 
-  <footer>
+  <footer role="contentinfo">
     <p>&copy; 2025 My Art Portfolio</p>
   </footer>
 
