@@ -1,0 +1,241 @@
+/* ===================
+   Color Variables
+=================== */
+:root {
+  --pink: #FF8282;
+  --coral: #FF6363;
+  --mint: #BEE4D0;
+  --light-green: #DBFFCB;
+  --overlay-dark: rgba(0, 0, 0, 0.5);
+}
+
+/* ===================
+   General Styles
+=================== */
+body {
+  margin: 0;
+  font-family: 'Montserrat', 'Open Sans', sans-serif;
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #eee;
+}
+
+/* ===================
+   Navigation
+=================== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--mint);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+nav button#toggle-theme {
+  background-color: var(--coral);
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ===================
+   Hero Banner
+=================== */
+.hero {
+  position: relative;
+  height: 60vh;
+  background: url('../images/hero-background.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--overlay-dark);
+  z-index: 0;
+}
+
+.hero h1,
+.hero p {
+  position: relative;
+  z-index: 1;
+  margin: 0.5em 0;
+}
+
+/* ===================
+   Section Styles
+=================== */
+section {
+  background-color: var(--light-green);
+  padding: 20px;
+  margin: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-3px);
+}
+
+section h2 {
+  margin-top: 0;
+  color: var(--coral);
+}
+
+a {
+  color: var(--pink);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===================
+   Collections Grid
+=================== */
+.collections ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.collections li {
+  background-color: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.collections li:hover {
+  transform: scale(1.02);
+  background-color: var(--mint);
+}
+
+.collections a {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* ===================
+   Tab + Lightbox (unchanged)
+=================== */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin: 20px;
+}
+
+.tab-button {
+  background-color: var(--pink);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.2s;
+}
+
+.tab-button.active {
+  background-color: var(--coral);
+  color: white;
+}
+
+.tab-content {
+  display: none;
+  padding: 20px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content img {
+  max-width: 200px;
+  border-radius: 10px;
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.tab-content img:hover {
+  transform: scale(1.05);
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 80vw;
+  max-height: 80vh;
+  text-align: center;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+}
+
+.close-lightbox {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 1.5rem;
+}

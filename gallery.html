@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery - My Digital Art Showcase</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About Me</a></li>
+      </ul>
+      <button id="toggle-theme">Toggle Theme</button>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Gallery</h1>
+    <div class="tabs">
+        <button class="tab-button active" data-tab="michigan">Michigan in Color</button>
+        <button class="tab-button" data-tab="studies">Studies</button>
+        <button class="tab-button" data-tab="free">Free for All</button>
+    </div>
+
+    <div id="michigan" class="tab-content active">
+        <img src="images/CandyStore.png" alt="Sunset over the Great Lakes" tabindex="0" />
+        <img src="images/Untitled_Artwork 10.png" alt="Fall trees in Ann Arbor" tabindex="0" />
+        <img src="images/michigan3.jpg" alt="Detroit skyline at night" tabindex="0" />
+    </div>
+
+    <div id="studies" class="tab-content">
+        <img src="images/THOMAS_Sifting_Sand.png" alt="Anatomy sketch in blue tones" tabindex="0" />
+        <img src="images/THOMAS_Wear_a_helmet.png" alt="Portrait study with dramatic lighting" tabindex="0" />
+        <img src="images/THOMAS_Real_Eyes_Realize_Real_Lies <:3,.png" alt="Portrait study with dramatic lighting" tabindex="0" />
+
+    </div>
+
+    <div id="free" class="tab-content">
+        <img src="images/THOMAS_JUMP!.png" alt="Glitch art experiment" tabindex="0" />
+        <img src="images/Untitled_Artwork_6.png" alt="Glitch art experiment" tabindex="0" />
+        <img src="images/SabCarp.png" alt="A study of a Sabrina Carptener concert photo" tabindex="0" />
+    </div>
+  </main>
+
+
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <div class="lightbox-content">
+      <button class="close-lightbox" aria-label="Close lightbox">&times;</button>
+      <img id="lightbox-img" src="" alt="" />
+      <p id="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 My Art Portfolio</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
